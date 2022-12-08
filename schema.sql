@@ -10,3 +10,27 @@
     weight_kg decimal
   );
   
+  -- Wednesday Daily Tasks
+
+ create table owners (
+  id SERIAL,
+  full_name varchar(32),
+  age int,
+  PRIMARY KEY (id)
+);
+
+create table species (
+	id SERIAL,
+	name varchar(32),
+	PRIMARY KEY (id)
+);
+
+alter table animals
+add column species_id int references species(id)
+on delete cascade;
+select * from animals;
+
+alter table animals
+add column owner_id int references owners(id)
+on delete cascade;
+select * from animals;
