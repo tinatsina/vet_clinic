@@ -11,3 +11,39 @@ insert into animals(id,name,date_of_birth,escape_attempts,neutered,weight_kg) va
 insert into animals(id,name,date_of_birth,escape_attempts,neutered,weight_kg) values (8,'Boarmon','2005-06-07',7,true,20.4);
 insert into animals(id,name,date_of_birth,escape_attempts,neutered,weight_kg) values (9,'Blossom','1998-10-13',3,true,3);
 insert into animals(id,name,date_of_birth,escape_attempts,neutered,weight_kg) values (10,'Ditto','2022-05-14',4,true,22);
+
+-- Day 3 Data Files
+insert into owners (full_name,age) values ('Sam Smith',34);
+insert into owners (full_name,age) values ('Jeniffer Orwell',19);
+insert into owners (full_name,age) values ('Bob',45);
+insert into owners (full_name,age) values ('Melody Pond',77);
+insert into owners (full_name,age) values ('Dean Winchester',14);
+insert into owners (full_name,age) values ('Jodie Whittaker',38);
+
+update animals
+set species_id = 1 where name like '%mon';
+select * from animals;
+
+update animals
+set species_id = 2 where species_id is null;
+select * from animals;
+
+update animals
+set owner_id = 1 where name like 'Agumon%';
+select * from animals;
+
+update animals
+set owner_id = 2 where name like 'Charmander%' or name like 'Squirtle%' or name like 'Blossom%';
+select * from animals;
+
+update animals
+set owner_id = 3 where name like 'Devimon%' or name like 'Plantom%';
+select * from animals;
+
+update animals
+set owner_id = 4 where name like 'Charmander%' or name like 'Squirtle%' or name like 'Blossom%';
+select * from animals;
+
+update animals
+set owner_id = 5 where name like 'Angemon%' or name like 'Boarmon%';
+select * from animals;
