@@ -83,3 +83,57 @@ left join animals on owners.id = animals.owner_id
 group by owners.full_name
 order by count(owners.full_name)
 desc limit 1;
+
+-- Queries Day 4
+select animals.name from animals 
+inner join visits on animals.id = visits.animals_id 
+where visits.vets_id = 1 
+order by visits.date_of_visit 
+asc limit 1;
+
+select count(animals.name) from animals
+inner join visits on animals.id = visits.animals_id 
+where vets_id = 3;
+
+SELECT vets.name, specialization.species_id FROM vets 
+left join specialization on vets.id = specialization.vets_id;
+
+select name from animals
+inner join visits on animals.id = visits.animals_id 
+where date_of_visit > '2020-04-01' 
+and date_of_visit < '2020-08-30' 
+and visits.vets_id = 3;
+
+select animals.name from animals 
+inner join visits on animals.id = visits.animals_id 
+group by animals.name 
+order by count(*) 
+desc limit 1;
+
+select animals.name from animals 
+inner join visits on animals.id = visits.animals_id 
+where visits.vets_id =2 
+and visits.date_of_visit =(select min(date_of_visit) from visits where visits.vets_id = 2);
+
+SELECT animals.name, visits.vets_id, visits.date_of_visit 
+FROM animals INNER JOIN visits ON animals.id = visits.animals_id 
+WHERE visits.date_of_visit = (SELECT MAX(date_of_visit) FROM visits);
+
+select 
+animals.name, 
+visits.vets_id, 
+visits.date_of_visit 
+from animals inner join visits on animals.id = visits.animals_id 
+where visits.date_of_visit = (select max(date_of_visit) from visits);
+
+select count(visits.animals_id) from visits 
+inner join vets on visits.vets_id = vets.id 
+inner join animals on animals.id = visits.animals_id 
+inner join specialization on specialization.species_id = vets.id 
+where specialization.species_id != animals.species_id;
+
+select animals.species_id, count (*) 
+from animals inner join visits on animals.id = visits.animals_id 
+where visits.vets_id = 2 
+group by animals.species_id 
+order by count(*) desc limit 1;
