@@ -47,3 +47,36 @@ select * from animals;
 update animals
 set owner_id = 5 where name like 'Angemon%' or name like 'Boarmon%';
 select * from animals;
+
+-- Day 4 Thursday Data Queris
+
+insert into vets(name,age,date_of_graduation) values ('William Tatcher',45,'2000-04-23');
+insert into vets(name,age,date_of_graduation) values ('Maisy Smith',26,'2019-01-17');
+insert into vets(name,age,date_of_graduation) values ('Stephanie Mendez',64,'1981-05-04');
+insert into vets(name,age,date_of_graduation) values ('Jack Harness',38,'2008-06-08');
+
+insert into specialization (vets_id,species_id) values (1,2);
+insert into specialization (vets_id,species_id) values (3,1);
+insert into specialization (vets_id,species_id) values (3,2);
+insert into specialization (vets_id,species_id) values (4,1);
+
+insert into visits (animals_id,vets_id,date_of_visit) values (0,1,'2020-05-24');
+insert into visits (animals_id,vets_id,date_of_visit) values (0,3,'2020-07-22');
+insert into visits (animals_id,vets_id,date_of_visit) values (1,4,'2021-02-02');
+insert into visits (animals_id,vets_id,date_of_visit) values (2,2,'2020-01-05');
+insert into visits (animals_id,vets_id,date_of_visit) values (2,2,'2020-03-08');
+insert into visits (animals_id,vets_id,date_of_visit) values (2,2,'2020-05-14');
+insert into visits (animals_id,vets_id,date_of_visit) values (3,3,'2021-05-04');
+insert into visits (animals_id,vets_id,date_of_visit) values (4,4,'2021-02-24');
+insert into visits (animals_id,vets_id,date_of_visit) values (5,2,'2019-12-21');
+insert into visits (animals_id,vets_id,date_of_visit) values (5,1,'2020-08-10');
+insert into visits (animals_id,vets_id,date_of_visit) values (5,2,'2021-04-07');
+insert into visits (animals_id,vets_id,date_of_visit) values (6,3,'2019-09-29');
+insert into visits (animals_id,vets_id,date_of_visit) values (7,4,'2020-10-03');
+insert into visits (animals_id,vets_id,date_of_visit) values (7,4,'2020-11-04');
+insert into visits (animals_id,vets_id,date_of_visit) values (8,2,'2019-01-24');
+insert into visits (animals_id,vets_id,date_of_visit) values (8,2,'2019-05-15');
+insert into visits (animals_id,vets_id,date_of_visit) values (8,2,'2020-02-27');
+insert into visits (animals_id,vets_id,date_of_visit) values (8,2,'2020-08-03');
+insert into visits (animals_id,vets_id,date_of_visit) values (9,3,'2020-05-24');
+insert into visits (animals_id,vets_id,date_of_visit) values (9,1,'2021-02-11');
